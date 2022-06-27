@@ -4,7 +4,7 @@ app = Flask(__name__)
 app.secret_key = "manbearpig_MUDMAN888"
 @app.route("/hello")
 def index():
-    flash("what's your name?")
+    flash("what's your name? And Kill Yash!")
     return render_template("index.html")
 
 @app.route("/greet", methods= ["POST", "GET"])
