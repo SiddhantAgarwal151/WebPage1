@@ -7,6 +7,7 @@
         {{ url_for('static', filename='css/main.css')}}">
     </head>
     <body>
+        {% if session %}
         <img src="https://miro.medium.com/max/1024/0*4ty0Adbdg4dsVBo3.png">
         <br> 
         <form action="greet" method="post">
@@ -18,6 +19,13 @@
             <br>
             <input type="submit" value="GREET" id="greet">
         </form>
+        <h1>Welcome {{session.userinfo.name}}!</h1>
+        <p><a href="/logout">Logout</a></p>
+        <div><pre>{{pretty}}</pre></div>
+        {% else %}
+            <h1>Welcome Guest</h1>
+            <p><a href="/login">Login</a></p>
+        {% endif %}
 
     </body>
 </html>
