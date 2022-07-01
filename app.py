@@ -69,7 +69,7 @@ def logout():
 @app.route("/greet", methods= ["POST", "GET"])
 def greet():
     flash("Hi "+ str(request.form['name_input']) + ", great to see you!")
-    return render_template("home.html")
+    return render_template("home.html", session=session.get('user'))
 
 
 if __name__ == "__main__":
